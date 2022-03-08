@@ -1,0 +1,53 @@
+﻿@using mevzuuCafe.Models.Entity
+@model List<tblHome>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h1 class="mt-4">Panel / Hakkımızda ve Alıntı Söz Ayarları</h1>
+@*<ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Panel / Anasayfa</li>
+    </ol>*@
+
+
+    <main>
+        <div class="container-fluid px-4">
+
+
+            <div class="card mb-4">
+
+                <form runat="server">
+                    <div class="card-body">
+                        <table id="datatablesSimple" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Adı</th>
+                                    <th>Görsel</th>
+                                    <th>Açıklama</th>
+                                    <th>Açıklama 2</th>
+                                    <th>Yönet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var hm in Model)
+                                {
+                                    <tr>
+                                        <td>@hm.homeID</td>
+                                        <td><b>@hm.bolum</b></td>
+                                        <td>@hm.resim</td>
+                                        <td>@hm.metin</td>
+                                        <td>@hm.metin2</td>
+                                        <td><a href="/About/EditAbout/@hm.homeID" class="btn btn-success">Düzenle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+

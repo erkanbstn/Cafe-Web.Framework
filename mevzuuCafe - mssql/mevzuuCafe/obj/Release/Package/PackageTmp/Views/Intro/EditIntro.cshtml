@@ -1,0 +1,27 @@
+﻿@model mevzuuCafe.Models.Entity.tblintro
+@{
+    ViewBag.Title = "EditIntro";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Intro", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.tanitimID)
+        @Html.TextBoxFor(x => x.tanitimID, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(x => x.baslik)
+        @Html.TextBoxFor(x => x.baslik, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(x => x.metin)
+        @Html.TextAreaFor(x => x.metin, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">Tanıtım Güncelle</button>
+    </div>
+}

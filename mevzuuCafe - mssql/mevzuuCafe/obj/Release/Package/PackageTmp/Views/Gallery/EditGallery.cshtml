@@ -1,0 +1,39 @@
+﻿@model mevzuuCafe.Models.Entity.tblGallery
+@{
+    ViewBag.Title = "EditGallery";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditGallery", "Gallery", FormMethod.Post))
+{
+    <div class="form-group">
+        @*@Html.LabelFor(x => x.imgID)
+        @Html.TextBoxFor(x => x.imgID, new { @class = "form-control" })
+        <br />*@
+        @Html.LabelFor(x => x.imgName,"Görsel Adı")
+        @Html.TextBoxFor(x => x.imgName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.imgView,"Görsel Uzantı")
+        @Html.TextAreaFor(x => x.imgView, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+        <button type="submit" class="btn btn-warning">Galeri Güncelle</button>
+    </div>
+}
+@* Ekle
+
+        <form class="form-group" method="post">
+        <div>
+            <label>Resim Adı</label>
+            <input type="text" class="form-control" name="imgName" />
+            <label>Resim</label>
+            <input type="image" class="form-control" name="imgName" />
+
+        </div>
+        <div style="margin:15px"></div>
+        <div>
+            <button class="btn btn-info">Galeriye Ekle</button>
+        </div>
+    </form>*@
+

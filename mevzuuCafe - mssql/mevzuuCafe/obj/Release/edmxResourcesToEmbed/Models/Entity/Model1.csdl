@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdminDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblAnasayfa">
+    <Key>
+      <PropertyRef Name="anasayfaID" />
+    </Key>
+    <Property Name="anasayfaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bölümler" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="aciklama2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblGallery">
+    <Key>
+      <PropertyRef Name="imgID" />
+    </Key>
+    <Property Name="imgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imgName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="imgView" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblHome">
+    <Key>
+      <PropertyRef Name="homeID" />
+    </Key>
+    <Property Name="homeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="metin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="metin2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblintro">
+    <Key>
+      <PropertyRef Name="tanitimID" />
+    </Key>
+    <Property Name="tanitimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="metin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="introstatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblMenu">
+    <Key>
+      <PropertyRef Name="menuID" />
+    </Key>
+    <Property Name="menuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="menuContent" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="menuImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="menuPrice" Type="Int32" />
+    <Property Name="menuStatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblPages">
+    <Key>
+      <PropertyRef Name="pageID" />
+    </Key>
+    <Property Name="pageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblSlider">
+    <Key>
+      <PropertyRef Name="sliderID" />
+    </Key>
+    <Property Name="sliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sliderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sliderImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CafeDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" />
+    <EntitySet Name="tblAnasayfa" EntityType="Self.tblAnasayfa" />
+    <EntitySet Name="tblGallery" EntityType="Self.tblGallery" />
+    <EntitySet Name="tblHome" EntityType="Self.tblHome" />
+    <EntitySet Name="tblintro" EntityType="Self.tblintro" />
+    <EntitySet Name="tblMenu" EntityType="Self.tblMenu" />
+    <EntitySet Name="tblPages" EntityType="Self.tblPages" />
+    <EntitySet Name="tblSlider" EntityType="Self.tblSlider" />
+  </EntityContainer>
+</Schema>

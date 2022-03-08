@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdminDbModelStoreContainer" CdmEntityContainer="CafeDbEntities">
+    <EntitySetMapping Name="tblAdmin">
+      <EntityTypeMapping TypeName="AdminDbModel.tblAdmin">
+        <MappingFragment StoreEntitySet="tblAdmin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAnasayfa">
+      <EntityTypeMapping TypeName="AdminDbModel.tblAnasayfa">
+        <MappingFragment StoreEntitySet="tblAnasayfa">
+          <ScalarProperty Name="anasayfaID" ColumnName="anasayfaID" />
+          <ScalarProperty Name="bölümler" ColumnName="bölümler" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="aciklama2" ColumnName="aciklama2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGallery">
+      <EntityTypeMapping TypeName="AdminDbModel.tblGallery">
+        <MappingFragment StoreEntitySet="tblGallery">
+          <ScalarProperty Name="imgID" ColumnName="imgID" />
+          <ScalarProperty Name="imgName" ColumnName="imgName" />
+          <ScalarProperty Name="imgView" ColumnName="imgView" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHome">
+      <EntityTypeMapping TypeName="AdminDbModel.tblHome">
+        <MappingFragment StoreEntitySet="tblHome">
+          <ScalarProperty Name="homeID" ColumnName="homeID" />
+          <ScalarProperty Name="bolum" ColumnName="bolum" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="metin" ColumnName="metin" />
+          <ScalarProperty Name="metin2" ColumnName="metin2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblintro">
+      <EntityTypeMapping TypeName="AdminDbModel.tblintro">
+        <MappingFragment StoreEntitySet="tblintro">
+          <ScalarProperty Name="tanitimID" ColumnName="tanitimID" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="metin" ColumnName="metin" />
+          <ScalarProperty Name="introstatus" ColumnName="introstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMenu">
+      <EntityTypeMapping TypeName="AdminDbModel.tblMenu">
+        <MappingFragment StoreEntitySet="tblMenu">
+          <ScalarProperty Name="menuID" ColumnName="menuID" />
+          <ScalarProperty Name="menuName" ColumnName="menuName" />
+          <ScalarProperty Name="menuContent" ColumnName="menuContent" />
+          <ScalarProperty Name="menuImage" ColumnName="menuImage" />
+          <ScalarProperty Name="menuPrice" ColumnName="menuPrice" />
+          <ScalarProperty Name="menuStatus" ColumnName="menuStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPages">
+      <EntityTypeMapping TypeName="AdminDbModel.tblPages">
+        <MappingFragment StoreEntitySet="tblPages">
+          <ScalarProperty Name="pageID" ColumnName="pageID" />
+          <ScalarProperty Name="pageName" ColumnName="pageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSlider">
+      <EntityTypeMapping TypeName="AdminDbModel.tblSlider">
+        <MappingFragment StoreEntitySet="tblSlider">
+          <ScalarProperty Name="sliderID" ColumnName="sliderID" />
+          <ScalarProperty Name="sliderName" ColumnName="sliderName" />
+          <ScalarProperty Name="sliderImage" ColumnName="sliderImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

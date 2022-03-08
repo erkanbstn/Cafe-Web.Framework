@@ -1,0 +1,32 @@
+﻿@model mevzuuCafe.Models.Entity.tblHome
+@{
+    ViewBag.Title = "EditAbout";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Edit", "About", FormMethod.Post,new { enctype = "multipart/form" }))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.homeID)
+    @Html.HiddenFor(x => x.homeID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.bolum)
+    @Html.TextBoxFor(x => x.bolum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.resim)
+    @Html.EditorFor(x=> x.resim, new { HtmlAttributes = new { @class = "form-group", type = "file" } })
+    @*<input type="file" name="files" id="file1" />*@
+    <br />
+    @Html.LabelFor(x => x.metin)
+    @Html.TextAreaFor(x => x.metin, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.metin2)
+    @Html.TextAreaFor(x => x.metin2, new { @class = "form-control" })
+    <br />
+</div>
+    <div>
+        <button  type="submit" class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

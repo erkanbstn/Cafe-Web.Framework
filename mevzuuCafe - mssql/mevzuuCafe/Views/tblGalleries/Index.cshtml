@@ -1,0 +1,40 @@
+﻿@model IEnumerable<mevzuuCafe.Models.Entity.tblGallery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imgName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgView)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgName)
+        </td>
+        <td>
+            <img src="@item.imgView" width="100" height="100" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.imgID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.imgID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.imgID })
+        </td>
+    </tr>
+}
+
+</table>

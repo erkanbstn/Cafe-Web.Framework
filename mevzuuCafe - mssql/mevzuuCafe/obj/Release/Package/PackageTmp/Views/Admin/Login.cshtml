@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> mevZUU Cafe Admin Giriş Paneli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="panel/css/stylelog.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="padding-all">
+        <div class="header">
+            <h1>Admin Giriş Formu</h1>
+        </div>
+
+        <div class="design-w3l">
+            <div class="mail-form-agile">
+                <form action="#" method="post" runat="server">
+                    @*<asp:TextBox ID="TextBox1" runat="server" PlaceHolder="Kullanıcı Adı:"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" PlaceHolder="*******"></asp:TextBox>*@
+
+                    <input type="text" name="TextBox1" placeholder="kullancı adı" />
+                    <input type="text" name="TextBox2" placeholder="şifre" />
+
+
+                    <div style="margin-top:15px">
+                        <button ID="Button1" runat="server" Text="Giriş" OnClick="Button1_Click" />
+                    </div>
+                </form>
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2021 tarafından yapılmıştır <a href="https://w3layouts.com/">  Mart Media </a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+@*@<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+    </head>
+    <body>
+
+
+
+        <div>
+            @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+            {
+
+                    <label>Kullanıcı Adı</label>
+                    <div class="input-group">
+                        <span class="fade fa-envelope" aria-hidden="true"></span>
+                        </div>
+                        <input type="text" placeholder="email" name="KullaniciAdi" />
+
+
+                        <label>Şifre</label>
+                        <div class="input-group">
+                            <span class="fade fa-lock" aria-hidden="true"></span>
+                            <input type="password" placeholder="password" name="Sifre" />
+                        </div>
+                        <button class="btn btn-danger btn-block" type="submit">Giriş</button>
+                        <h2>&nbsp;</h2>
+            }
+        </div>
+    </body>
+    </html>*@

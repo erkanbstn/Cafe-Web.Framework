@@ -1,0 +1,35 @@
+﻿@model mevzuuCafe.Models.Entity.tblGallery
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblGallery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgView)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.imgID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

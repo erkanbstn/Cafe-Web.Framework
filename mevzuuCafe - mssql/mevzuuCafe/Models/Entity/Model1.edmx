@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AdminDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAdmin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KayitTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblAnasayfa">
+          <Key>
+            <PropertyRef Name="anasayfaID" />
+          </Key>
+          <Property Name="anasayfaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bölümler" Type="nchar" MaxLength="10" />
+          <Property Name="resim" Type="nvarchar" MaxLength="100" />
+          <Property Name="aciklama" Type="varchar(max)" />
+          <Property Name="aciklama2" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblGallery">
+          <Key>
+            <PropertyRef Name="imgID" />
+          </Key>
+          <Property Name="imgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imgName" Type="nvarchar" MaxLength="50" />
+          <Property Name="imgView" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblHome">
+          <Key>
+            <PropertyRef Name="homeID" />
+          </Key>
+          <Property Name="homeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bolum" Type="nvarchar" MaxLength="50" />
+          <Property Name="resim" Type="nvarchar" MaxLength="150" />
+          <Property Name="metin" Type="nvarchar(max)" />
+          <Property Name="metin2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblintro">
+          <Key>
+            <PropertyRef Name="tanitimID" />
+          </Key>
+          <Property Name="tanitimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="baslik" Type="nvarchar" MaxLength="50" />
+          <Property Name="metin" Type="nvarchar" MaxLength="150" />
+          <Property Name="introstatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblMenu">
+          <Key>
+            <PropertyRef Name="menuID" />
+          </Key>
+          <Property Name="menuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menuName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menuContent" Type="nvarchar" MaxLength="300" />
+          <Property Name="menuImage" Type="nvarchar" MaxLength="200" />
+          <Property Name="menuPrice" Type="int" />
+          <Property Name="menuStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblPages">
+          <Key>
+            <PropertyRef Name="pageID" />
+          </Key>
+          <Property Name="pageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pageName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblSlider">
+          <Key>
+            <PropertyRef Name="sliderID" />
+          </Key>
+          <Property Name="sliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sliderName" Type="nvarchar" MaxLength="50" />
+          <Property Name="sliderImage" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="AdminDbModelStoreContainer">
+          <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAnasayfa" EntityType="Self.tblAnasayfa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGallery" EntityType="Self.tblGallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHome" EntityType="Self.tblHome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblintro" EntityType="Self.tblintro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMenu" EntityType="Self.tblMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPages" EntityType="Self.tblPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSlider" EntityType="Self.tblSlider" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdminDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAdmin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblAnasayfa">
+          <Key>
+            <PropertyRef Name="anasayfaID" />
+          </Key>
+          <Property Name="anasayfaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bölümler" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="resim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblGallery">
+          <Key>
+            <PropertyRef Name="imgID" />
+          </Key>
+          <Property Name="imgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imgName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imgView" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblHome">
+          <Key>
+            <PropertyRef Name="homeID" />
+          </Key>
+          <Property Name="homeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resim" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="metin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="metin2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblintro">
+          <Key>
+            <PropertyRef Name="tanitimID" />
+          </Key>
+          <Property Name="tanitimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="metin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="introstatus" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblMenu">
+          <Key>
+            <PropertyRef Name="menuID" />
+          </Key>
+          <Property Name="menuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="menuContent" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="menuImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="menuPrice" Type="Int32" />
+          <Property Name="menuStatus" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblPages">
+          <Key>
+            <PropertyRef Name="pageID" />
+          </Key>
+          <Property Name="pageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSlider">
+          <Key>
+            <PropertyRef Name="sliderID" />
+          </Key>
+          <Property Name="sliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sliderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sliderImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="CafeDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" />
+          <EntitySet Name="tblAnasayfa" EntityType="Self.tblAnasayfa" />
+          <EntitySet Name="tblGallery" EntityType="Self.tblGallery" />
+          <EntitySet Name="tblHome" EntityType="Self.tblHome" />
+          <EntitySet Name="tblintro" EntityType="Self.tblintro" />
+          <EntitySet Name="tblMenu" EntityType="Self.tblMenu" />
+          <EntitySet Name="tblPages" EntityType="Self.tblPages" />
+          <EntitySet Name="tblSlider" EntityType="Self.tblSlider" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdminDbModelStoreContainer" CdmEntityContainer="CafeDbEntities">
+          <EntitySetMapping Name="tblAdmin">
+            <EntityTypeMapping TypeName="AdminDbModel.tblAdmin">
+              <MappingFragment StoreEntitySet="tblAdmin">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAnasayfa">
+            <EntityTypeMapping TypeName="AdminDbModel.tblAnasayfa">
+              <MappingFragment StoreEntitySet="tblAnasayfa">
+                <ScalarProperty Name="anasayfaID" ColumnName="anasayfaID" />
+                <ScalarProperty Name="bölümler" ColumnName="bölümler" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="aciklama2" ColumnName="aciklama2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGallery">
+            <EntityTypeMapping TypeName="AdminDbModel.tblGallery">
+              <MappingFragment StoreEntitySet="tblGallery">
+                <ScalarProperty Name="imgID" ColumnName="imgID" />
+                <ScalarProperty Name="imgName" ColumnName="imgName" />
+                <ScalarProperty Name="imgView" ColumnName="imgView" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHome">
+            <EntityTypeMapping TypeName="AdminDbModel.tblHome">
+              <MappingFragment StoreEntitySet="tblHome">
+                <ScalarProperty Name="homeID" ColumnName="homeID" />
+                <ScalarProperty Name="bolum" ColumnName="bolum" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="metin" ColumnName="metin" />
+                <ScalarProperty Name="metin2" ColumnName="metin2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblintro">
+            <EntityTypeMapping TypeName="AdminDbModel.tblintro">
+              <MappingFragment StoreEntitySet="tblintro">
+                <ScalarProperty Name="tanitimID" ColumnName="tanitimID" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="metin" ColumnName="metin" />
+                <ScalarProperty Name="introstatus" ColumnName="introstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMenu">
+            <EntityTypeMapping TypeName="AdminDbModel.tblMenu">
+              <MappingFragment StoreEntitySet="tblMenu">
+                <ScalarProperty Name="menuID" ColumnName="menuID" />
+                <ScalarProperty Name="menuName" ColumnName="menuName" />
+                <ScalarProperty Name="menuContent" ColumnName="menuContent" />
+                <ScalarProperty Name="menuImage" ColumnName="menuImage" />
+                <ScalarProperty Name="menuPrice" ColumnName="menuPrice" />
+                <ScalarProperty Name="menuStatus" ColumnName="menuStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPages">
+            <EntityTypeMapping TypeName="AdminDbModel.tblPages">
+              <MappingFragment StoreEntitySet="tblPages">
+                <ScalarProperty Name="pageID" ColumnName="pageID" />
+                <ScalarProperty Name="pageName" ColumnName="pageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSlider">
+            <EntityTypeMapping TypeName="AdminDbModel.tblSlider">
+              <MappingFragment StoreEntitySet="tblSlider">
+                <ScalarProperty Name="sliderID" ColumnName="sliderID" />
+                <ScalarProperty Name="sliderName" ColumnName="sliderName" />
+                <ScalarProperty Name="sliderImage" ColumnName="sliderImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

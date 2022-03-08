@@ -1,0 +1,125 @@
+﻿@model mevzuuCafe.Models.Email
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="fh5co-contact" class="fh5co-section animate-box">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>Düşündüklerinizi bizimle paylaşın</h2>
+                <p>Hakkımızda eleştiri, yorum ya da tavsiyeleriniz varsa gönderin, çabucak değerlendirelim.</p>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="fh5co-about" class="fh5co-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-md-pull-1 img-wrap animate-box" data-animate-effect="fadeInLeft">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.586893700395!2d32.84197431538252!3d39.97298797941915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34daada6a3741%3A0x8420652823131f66!2smevZUU%20Cafe%20%26%20Bistro!5e0!3m2!1str!2str!4v1630653912003!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="col-md-5 col-md-push-1 col-sm-6 col-sm-push-6">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            @*<div class="alert alert-info">@TempData["Message"]</div>*@
+
+                            <form action="#" id="form-wrap">
+
+
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="name">İSMİNİZ</label>
+                                        @*@Html.LabelFor(model => model.AdSoyad)*@
+                                        @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AdSoyad)
+
+                                        @*<label for="name">İSMİNİZ</label>*@
+                                        @*<input type="text" class="form-control" id="name">*@
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+
+                                    <div class="col-md-12">
+                                        <label for="name">KONU</label>
+                                        @*@Html.LabelFor(model => model.Baslik)<br />*@
+                                        @Html.EditorFor(model => model.Baslik, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Baslik, "", new { @class = "text-danger" })
+
+                                        @*<label for="call">Telefon numaranız</label>*@
+                                        @*<input type="text" class="form-control" id="call">*@
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="name">MAİL ADRESİNİZ</label>
+                                        @*@Html.LabelFor(model => model.GonderenMail)<br />*@
+                                        @Html.EditorFor(model => model.GonderenMail, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.GonderenMail, "", new { @class = "text-danger" })
+
+                                        @*
+
+                                            @*<label for="email">MAİL ADRESİNİZ</label>
+                                            <input type="text" class="form-control" id="email">*@
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12" style="color:black">
+                                        <label for="name">MESAJINIZ</label><br />
+                                        @*@Html.LabelFor(model => model.Icerik) <br />*@
+                                        @*@Html.TextBoxFor(x => x.Icerik, new { @class = "form-control" })*@
+                                        @Html.TextAreaFor(model => model.Icerik,5,50, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Icerik)
+
+                                        @*<label for="message">MESAJINIZ</label>*@
+                                        @*<textarea name="" id="message" cols="30" rows="5" class="form-control"></textarea>*@
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+
+                                        <input type="submit" value="Gönder" class="btn btn-primary btn-outline btn-lg">
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+

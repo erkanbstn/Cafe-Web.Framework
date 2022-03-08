@@ -1,0 +1,31 @@
+﻿@model mevzuuCafe.Models.Entity.tblMenu
+
+@{
+    ViewBag.Title = "EditMenu";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditMenu", "MenuPanel", FormMethod.Post))
+{
+<div class="form-group">
+    @*@Html.LabelFor(x => x.imgID)
+        @Html.TextBoxFor(x => x.imgID, new { @class = "form-control" })
+        <br />*@
+    @Html.LabelFor(x => x.menuName "Adı")
+    @Html.TextBoxFor(x => x.menuName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.menuContent, "İçerik")
+    @Html.TextAreaFor(x => x.menuContent, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.menuImage "Görsel")
+    @Html.TextBoxFor(x => x.menuImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.menuPrice, "Fiyat")
+    @Html.TextAreaFor(x => x.menuPrice, new { @class = "form-control" })
+    <br />
+</div>
+    <div>
+        <button type="submit" class="btn btn-warning">Galeri Güncelle</button>
+    </div>
+}
+

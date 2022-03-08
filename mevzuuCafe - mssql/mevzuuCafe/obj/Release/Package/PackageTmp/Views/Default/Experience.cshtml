@@ -1,0 +1,47 @@
+﻿@using mevzuuCafe.Models.Entity
+@model List<tblintro>
+
+@{ 
+    int i = 2;
+}
+<div class="col-md-12 col-md-offset-0">
+    <ul class="timeline animate-box">
+        <li class="timeline-heading text-center animate-box">
+            <div><h3>Tecrübemiz</h3></div>
+        </li>
+        @foreach (var item in Model)
+        {
+            if (i % 2 == 0)
+            {
+                <li class="animate-box timeline-unverted">
+                    <div class="timeline-badge"><i class="icon-genius"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3 class="timeline-title">@item.baslik</h3>
+
+                        </div>
+                        <div class="timeline-body">
+                            <p>@item.metin</p>
+                        </div>
+                    </div>
+                </li>
+            }
+            else
+            {
+                <li class="timeline-inverted animate-box">
+                    <div class="timeline-badge"><i class="icon-genius"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3 class="timeline-title">@item.baslik</h3>
+                        </div>
+                        <div class="timeline-body">
+                            <p>@item.metin</p>
+                        </div>
+                    </div>
+                </li>
+            }
+            i++;
+        }
+        <br>
+    </ul>
+</div>

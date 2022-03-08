@@ -1,0 +1,25 @@
+﻿@model mevzuuCafe.Models.Entity.tblSlider
+
+@{
+    ViewBag.Title = "EditSlider";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditSlider", "Slider", FormMethod.Post, new { enctype = "multipart/form" }))
+{
+    <div class="form-group">
+        @*@Html.LabelFor(x => x.imgID)
+            @Html.TextBoxFor(x => x.imgID, new { @class = "form-control" })
+            <br />*@
+        @Html.LabelFor(x => x.sliderName, "Görsel Adı")
+        @Html.TextBoxFor(x => x.sliderName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.sliderImage, "Görsel Uzantı")
+        @Html.EditorFor(x => x.sliderImage, new { HtmlAttributes = new { @class = "form-group", type = "file" } })
+        <br />
+    </div>
+    <div>
+        <button type="submit" class="btn btn-warning">Galeri Güncelle</button>
+    </div>
+}
+

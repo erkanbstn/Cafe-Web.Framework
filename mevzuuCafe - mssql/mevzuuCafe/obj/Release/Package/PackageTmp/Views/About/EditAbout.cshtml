@@ -1,0 +1,31 @@
+﻿@model mevzuuCafe.Models.Entity.tblHome
+@{
+    ViewBag.Title = "EditAbout";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Edit", "About", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.homeID)
+    @Html.TextBoxFor(x => x.homeID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.bolum)
+    @Html.TextBoxFor(x => x.bolum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.resim)
+    @Html.TextAreaFor(x => x.resim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.metin)
+    @Html.TextAreaFor(x => x.metin, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.metin2)
+    @Html.TextAreaFor(x => x.metin2, new { @class = "form-control" })
+    <br />
+</div>
+    <div>
+        <button  type="submit" class="btn btn-warning">Galeri Güncelle</button>
+    </div>
+}
+

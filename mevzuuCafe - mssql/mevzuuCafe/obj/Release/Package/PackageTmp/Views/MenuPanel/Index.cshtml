@@ -1,0 +1,54 @@
+﻿@using mevzuuCafe.Models.Entity
+@model List<tblMenu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1 class="mt-4">Panel / Menu Düzenleme</h1>
+@*<ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Panel / Anasayfa</li>
+    </ol>*@
+
+
+<main>
+    <div class="container-fluid px-4">
+
+
+        <div class="card mb-4">
+
+            <form runat="server">
+                <div class="card-body">
+                    <table id="datatablesSimple" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Adı</th>
+                                <th>İçerik</th>
+                                <th>Görsel</th>
+                                <th>Fiyat</th>
+                                <th>Yönet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var mn in Model)
+                            {
+                            <tr>
+                                <td>@mn.menuName</td>
+                                <td>@mn.menuContent</td>
+                                <td><img src="@mn.menuImage" class="img-circle img-fluid" width="30%" /></td>
+                                <td>@mn.menuPrice</td>                                
+                                <td><a href="/MenuPanel/EditMenu/@mn.menuID" class="btn btn-success">Düzenle</a></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+

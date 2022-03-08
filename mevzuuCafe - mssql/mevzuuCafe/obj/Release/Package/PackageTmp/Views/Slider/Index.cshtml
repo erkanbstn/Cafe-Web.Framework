@@ -1,0 +1,48 @@
+﻿@using mevzuuCafe.Models.Entity
+@model List<tblSlider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h1 class="mt-4">Panel / Slider Görselleri </h1>
+
+
+    <main>
+        <div class="container-fluid px-4">
+
+
+            <div class="card mb-4">
+
+                <form runat="server">
+                    <div class="card-body">
+                        <table id="datatablesSimple" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Adı</th>
+                                    <th>Görsel</th>
+                                    <th>Açıklama</th>
+                                    <th>Yönet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var sld in Model)
+                                {
+                                    <tr>
+                                        <td>@sld.sliderID</td>
+                                        <td>@sld.sliderName</td>
+                                        <td>@sld.sliderImage</td>
+                                        <td>içerik</td>
+                                        <td><a href="/Slider/Duzenle/@sld.sliderID" class="btn btn-success">Düzenle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+

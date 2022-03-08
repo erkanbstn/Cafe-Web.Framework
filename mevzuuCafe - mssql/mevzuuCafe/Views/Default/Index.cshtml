@@ -1,0 +1,63 @@
+﻿@using mevzuuCafe.Models.Entity
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="fh5co-about" class="fh5co-section">
+    <div class="container">
+        <div class="row">
+            @Html.Action("About", "Default")
+        </div>
+    </div>
+</div>
+
+
+    <div id="fh5co-gallery" class="fh5co-section">
+            <div class="container">
+                <div class="row">
+                    @Html.Action("Images", "Default")
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-timeline">
+            <div class="container">
+                <div class="row">
+                    @Html.Action("Experience", "Default")
+                </div>
+            </div>
+        </div>
+
+
+        <div id="fh5co-featured-testimony" class="fh5co-section">
+            <div class="container">
+                @Html.Action("Saying", "Default")
+            </div>
+        </div>
+
+
+
+
+
+    <div id="fh5co-started" class="fh5co-section animate-box" style="background-image: url(~/images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Yorumlar</h2>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+
+
+
+                    <p>Buraya kişilerden gelen yorumlar gelebilir. google places api</p>
+                    <p><a href="reservation.html" class="btn btn-primary btn-outline">Devamı</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
